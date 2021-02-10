@@ -1,15 +1,13 @@
-
+#!/usr/bin/python3
 from twilio.rest import Client
-
-account_sid = 'AC4f4be6c0e47a8d041615b22bff30044e'
-auth_token = '1532cdc2a9cb656aebac65f3275dbc6d'
+from config import account_sid, auth_token, twi_num, voice_num
 
 client = Client(account_sid, auth_token)
 
 call = client.calls.create(
-        from_ = '+12702761943',
+        from_ = twi_num,
         twiml = '<Response><Say>Turtle tank leak detected! Turtle tank leak detected!Say></Response>',
-        to = '+17038960064'
+        to = voice_num
         )
 
 print(call.sid)
