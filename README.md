@@ -5,7 +5,7 @@ Leak detection project for Raspberry Pi using Python 3. This project was used to
 
 Requires the smtplib library:
 
-```python
+```shell
 pip install smtplib
 ```
 
@@ -13,14 +13,14 @@ pip install smtplib
 
 Requires the twilio library:
 
-```python
+```shell
 pip install twilio
 ```
 ## leak-alert.py
 
 Requires the time library for its sleep function, RPi.GPIO library, and the spidev library
 
-```python
+```shell
 pip install sleep
 pip install RPi.GPIO
 pip install spidev
