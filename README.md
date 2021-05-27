@@ -75,3 +75,27 @@ You can reattach to the session running the leak detection program and confirm t
 tmux attach -t 0
 ```
 Where 0 can be replaced by whichever session ID your leak detection program is running within.
+
+# Run on startup
+
+The `autostart_leak_alert.cron` file contains a bash script to run `leak_alert.py` at startup.
+
+Make the .cron file executable:
+
+```shell
+chmod +x autostart_leak_alert.cron
+```
+
+Then create a cronjob to run this .cron file:
+
+```shell
+crontab -e
+```
+Go to the bottom the crontab file and add the following command:
+
+```
+@reboot /home/pi/autostart_leak_alert.cron
+```
+Save and quit the file.
+
+The `leak_alert.py` file should run at startup now.
